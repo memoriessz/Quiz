@@ -4,850 +4,731 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Kuis Evaluasi | Keseimbangan Asam Basa</title>
+<title>Kuis Keseimbangan Asam-Basa | Kelompok 4</title>
 
 <style>
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
-body {
-    font-family: "Segoe UI", Arial, sans-serif;
-    min-height: 100vh;
+body{
+    min-height:100vh;
     background:
-        radial-gradient(circle at top left, #00b4d8 0%, transparent 30%),
-        radial-gradient(circle at bottom right, #0077b6 0%, transparent 35%),
-        linear-gradient(135deg, #001f3f, #003b5c, #005f73);
-
-    color: #12344d;
-    padding: 20px;
+        radial-gradient(circle at top left, rgba(18,184,201,.35), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(8,127,165,.35), transparent 35%),
+        linear-gradient(135deg,#041b48,#075f87,#12b8c9);
+    color:white;
+    padding:20px;
 }
 
-/* ================= CONTAINER ================= */
-
-.container {
-    width: 100%;
-    max-width: 850px;
-    margin: auto;
+.container{
+    max-width:850px;
+    margin:auto;
 }
 
-/* ================= HEADER ================= */
-
-.header {
-    text-align: center;
-    color: white;
-    padding: 25px 10px;
+.card{
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,.2);
+    border-radius:28px;
+    padding:30px;
+    box-shadow:0 20px 50px rgba(0,0,0,.28);
 }
 
-.header .icon {
-    font-size: 55px;
-    margin-bottom: 8px;
-    animation: float 3s ease-in-out infinite;
+
+/* ================= HALAMAN AWAL ================= */
+
+.start-page{
+    text-align:center;
+    margin-top:35px;
+    overflow:hidden;
+    position:relative;
 }
 
-.header h1 {
-    font-size: 32px;
-    margin-bottom: 8px;
-    font-weight: 800;
+.start-page::before{
+    content:"";
+    position:absolute;
+    width:180px;
+    height:180px;
+    background:rgba(18,184,201,.15);
+    border-radius:50%;
+    top:-80px;
+    right:-70px;
 }
 
-.header p {
-    font-size: 16px;
-    opacity: 0.85;
+.start-page::after{
+    content:"";
+    position:absolute;
+    width:130px;
+    height:130px;
+    background:rgba(255,255,255,.07);
+    border-radius:50%;
+    bottom:-70px;
+    left:-50px;
 }
 
-@keyframes float {
-
-    0%, 100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-8px);
-    }
-
+.group-badge{
+    display:inline-block;
+    padding:8px 18px;
+    border-radius:30px;
+    background:rgba(255,255,255,.15);
+    border:1px solid rgba(255,255,255,.25);
+    color:#eaffff;
+    font-size:13px;
+    font-weight:bold;
+    letter-spacing:1px;
+    margin-bottom:20px;
 }
 
-/* ================= CARD ================= */
-
-.card {
-    background: rgba(255,255,255,0.97);
-    border-radius: 25px;
-    padding: 30px;
-    box-shadow:
-        0 20px 50px rgba(0,0,0,0.30);
-
-    backdrop-filter: blur(10px);
+.icon-box{
+    width:82px;
+    height:82px;
+    border-radius:24px;
+    background:rgba(255,255,255,.15);
+    border:1px solid rgba(255,255,255,.25);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:42px;
+    margin:0 auto 20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
 }
 
-/* ================= START PAGE ================= */
-
-.start-page {
-    text-align: center;
+.start-page h1{
+    font-size:34px;
+    line-height:1.25;
+    margin-bottom:12px;
+    position:relative;
+    z-index:2;
 }
 
-.start-page h2 {
-    color: #003b5c;
-    font-size: 27px;
-    margin-bottom: 12px;
+.start-page h1 span{
+    color:#8ff7ff;
 }
 
-.start-page p {
-    color: #607d8b;
-    line-height: 1.6;
-    margin-bottom: 25px;
+.description{
+    color:#e5fbff;
+    line-height:1.7;
+    font-size:15px;
+    max-width:620px;
+    margin:0 auto;
 }
 
-.info-box {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-    margin-bottom: 25px;
+.love-text{
+    margin:20px auto;
+    max-width:600px;
+    padding:14px 18px;
+    color:#ffe7f2 !important;
+    background:rgba(255,255,255,.08);
+    border-radius:15px;
+    font-style:italic;
+    line-height:1.6 !important;
 }
 
-.info {
-    background: #eefaff;
-    border: 1px solid #c7edfa;
-    padding: 15px 10px;
-    border-radius: 15px;
+.info-box{
+    text-align:left;
+    background:rgba(0,0,0,.16);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+    padding:20px;
+    margin:25px 0;
+    line-height:1.9;
+    color:#e9fcff;
 }
 
-.info-icon {
-    font-size: 25px;
-    margin-bottom: 5px;
+.info-title{
+    font-weight:bold;
+    color:white;
+    margin-bottom:8px;
 }
 
-.info strong {
-    display: block;
-    color: #005f73;
-    font-size: 14px;
+.info-item{
+    margin:4px 0;
 }
 
-.info span {
-    font-size: 13px;
-    color: #6c8795;
+.start-btn{
+    background:white;
+    color:#087fa5;
+    padding:15px 32px;
+    min-width:210px;
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
 }
 
-/* ================= BUTTON ================= */
-
-button {
-    border: none;
-    font-family: inherit;
-    cursor: pointer;
-    font-weight: 700;
+.start-btn:hover{
+    background:#efffff;
 }
 
-.btn-start,
-.btn-next,
-.btn-restart {
-    color: white;
-    background: linear-gradient(135deg, #0077b6, #00a6d6);
-    padding: 14px 25px;
-    border-radius: 14px;
-    font-size: 16px;
-    transition: 0.25s;
-    box-shadow: 0 8px 20px rgba(0,119,182,0.25);
-}
-
-.btn-start {
-    width: 100%;
-    max-width: 350px;
-}
-
-.btn-start:hover,
-.btn-next:hover,
-.btn-restart:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 25px rgba(0,119,182,0.35);
-}
 
 /* ================= QUIZ ================= */
 
-.quiz-page {
-    display: none;
+.quiz-page{
+    display:none;
 }
 
-/* TOP BAR */
-
-.quiz-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
+.progress-text{
+    font-size:14px;
+    color:#dffaff;
+    margin-bottom:10px;
+    font-weight:bold;
 }
 
-.question-counter {
-    color: #0077b6;
-    font-weight: 800;
-    font-size: 15px;
+.progress{
+    height:9px;
+    background:rgba(255,255,255,.2);
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:28px;
 }
 
-.score-small {
-    background: #e8f8ff;
-    color: #005f73;
-    padding: 7px 12px;
-    border-radius: 20px;
-    font-weight: bold;
-    font-size: 14px;
+.progress-bar{
+    height:100%;
+    width:0%;
+    background:white;
+    transition:.3s;
 }
 
-/* PROGRESS */
-
-.progress-container {
-    width: 100%;
-    height: 9px;
-    background: #e2f3f9;
-    border-radius: 20px;
-    overflow: hidden;
-    margin-bottom: 25px;
+.question{
+    font-size:21px;
+    line-height:1.55;
+    margin-bottom:25px;
+    font-weight:bold;
 }
 
-.progress {
-    width: 10%;
-    height: 100%;
-    background: linear-gradient(90deg, #0077b6, #00d4ff);
-    border-radius: 20px;
-    transition: width 0.4s ease;
+.options{
+    display:flex;
+    flex-direction:column;
+    gap:13px;
 }
 
-/* QUESTION */
-
-.question {
-    color: #12344d;
-    font-size: 22px;
-    line-height: 1.5;
-    margin-bottom: 25px;
+.option{
+    width:100%;
+    text-align:left;
+    background:rgba(255,255,255,.12);
+    color:white;
+    border:2px solid rgba(255,255,255,.18);
+    padding:16px;
+    border-radius:15px;
+    font-weight:normal;
+    line-height:1.5;
 }
 
-/* OPTIONS */
-
-.options {
-    display: flex;
-    flex-direction: column;
-    gap: 13px;
+.option:hover{
+    background:rgba(255,255,255,.2);
 }
 
-.option {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-
-    padding: 16px;
-
-    border: 2px solid #d4edf6;
-    background: #f8fdff;
-
-    border-radius: 15px;
-
-    cursor: pointer;
-
-    transition: 0.2s;
+.option.correct{
+    background:#158b5b;
+    border-color:#63f0b2;
 }
 
-.option:hover {
-    border-color: #00a6d6;
-    background: #eefaff;
-    transform: translateX(4px);
+.option.wrong{
+    background:#b43d50;
+    border-color:#ff899a;
 }
 
-.option-letter {
-    min-width: 35px;
-    height: 35px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-
-    background: #dff6ff;
-    color: #006994;
-
-    font-weight: bold;
+.explanation{
+    display:none;
+    margin-top:20px;
+    padding:17px;
+    background:rgba(0,0,0,.2);
+    border-radius:15px;
+    line-height:1.7;
+    color:#e9fcff;
 }
 
-.option-text {
-    font-size: 15px;
-    line-height: 1.4;
+.quiz-buttons{
+    display:flex;
+    justify-content:space-between;
+    gap:12px;
+    margin-top:25px;
 }
 
-/* CORRECT */
-
-.option.correct {
-    background: #dcfce7;
-    border-color: #22c55e;
-    color: #166534;
+button{
+    border:none;
+    border-radius:14px;
+    padding:13px 20px;
+    font-size:15px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.2s;
 }
 
-.option.correct .option-letter {
-    background: #22c55e;
-    color: white;
+button:hover{
+    transform:translateY(-2px);
 }
 
-/* WRONG */
-
-.option.wrong {
-    background: #fee2e2;
-    border-color: #ef4444;
-    color: #991b1b;
+.back-btn{
+    background:rgba(255,255,255,.18);
+    color:white;
 }
 
-.option.wrong .option-letter {
-    background: #ef4444;
-    color: white;
+.next-btn{
+    background:white;
+    color:#087fa5;
 }
 
-.option.disabled {
-    cursor: default;
+
+/* ================= HASIL ================= */
+
+.result-page{
+    display:none;
+    text-align:center;
 }
 
-/* EXPLANATION */
-
-.explanation {
-    display: none;
-
-    margin-top: 20px;
-    padding: 18px;
-
-    background: #eefaff;
-
-    border-left: 5px solid #0077b6;
-
-    border-radius: 12px;
-
-    line-height: 1.6;
-
-    color: #365d70;
-
-    animation: appear 0.3s ease;
+.result-page h1{
+    font-size:32px;
+    margin-bottom:15px;
 }
 
-.explanation-title {
-    color: #005f73;
-    font-weight: 800;
-    margin-bottom: 5px;
+.result-page p{
+    color:#e4fbff;
+    line-height:1.6;
 }
 
-@keyframes appear {
+.score-circle{
+    width:170px;
+    height:170px;
+    border-radius:50%;
+    background:rgba(255,255,255,.15);
+    border:5px solid white;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    margin:25px auto;
+}
 
-    from {
-        opacity: 0;
-        transform: translateY(8px);
+.score-number{
+    font-size:45px;
+    font-weight:bold;
+}
+
+.score-label{
+    font-size:14px;
+}
+
+.result-summary{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin:25px 0;
+}
+
+.summary-box{
+    background:rgba(255,255,255,.12);
+    padding:18px 25px;
+    border-radius:15px;
+    min-width:130px;
+}
+
+.summary-box strong{
+    display:block;
+    font-size:27px;
+    margin-bottom:5px;
+}
+
+.restart-btn{
+    background:white;
+    color:#087fa5;
+    padding:15px 28px;
+}
+
+.footer{
+    text-align:center;
+    margin-top:25px;
+    font-size:12px;
+    color:#d9faff;
+    opacity:.9;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:600px){
+
+    body{
+        padding:12px;
     }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    .card{
+        padding:22px;
     }
 
-}
-
-/* NEXT BUTTON */
-
-.next-area {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 25px;
-}
-
-.btn-next:disabled {
-    background: #a9c3cd;
-    box-shadow: none;
-    cursor: not-allowed;
-    transform: none;
-}
-
-/* ================= RESULT ================= */
-
-.result-page {
-    display: none;
-    text-align: center;
-}
-
-.result-icon {
-    font-size: 75px;
-    animation: float 3s infinite;
-}
-
-.result-page h2 {
-    color: #003b5c;
-    font-size: 30px;
-    margin: 10px 0;
-}
-
-.score-circle {
-    width: 150px;
-    height: 150px;
-
-    margin: 20px auto;
-
-    border-radius: 50%;
-
-    background:
-        linear-gradient(135deg, #0077b6, #00b4d8);
-
-    color: white;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    box-shadow: 0 15px 30px rgba(0,119,182,0.3);
-}
-
-.score-number {
-    font-size: 42px;
-    font-weight: 800;
-}
-
-.score-label {
-    font-size: 13px;
-    opacity: 0.9;
-}
-
-.result-message {
-    color: #607d8b;
-    line-height: 1.6;
-    margin-bottom: 25px;
-}
-
-/* ================= FOOTER ================= */
-
-.footer {
-    text-align: center;
-    color: rgba(255,255,255,0.65);
-    font-size: 12px;
-    padding: 20px;
-}
-
-/* ================= MOBILE ================= */
-
-@media (max-width: 600px) {
-
-    body {
-        padding: 10px;
+    .start-page{
+        margin-top:15px;
     }
 
-    .header {
-        padding: 15px 5px 20px;
+    .icon-box{
+        width:70px;
+        height:70px;
+        font-size:36px;
     }
 
-    .header .icon {
-        font-size: 45px;
+    .start-page h1{
+        font-size:27px;
     }
 
-    .header h1 {
-        font-size: 25px;
+    .description{
+        font-size:14px;
     }
 
-    .card {
-        padding: 20px;
-        border-radius: 20px;
+    .question{
+        font-size:19px;
     }
 
-    .info-box {
-        grid-template-columns: 1fr;
+    .result-summary{
+        flex-direction:column;
     }
 
-    .question {
-        font-size: 19px;
+    .summary-box{
+        width:100%;
     }
 
-    .option {
-        padding: 13px;
+    .quiz-buttons{
+        flex-direction:column;
     }
 
-    .option-text {
-        font-size: 14px;
+    .quiz-buttons button{
+        width:100%;
     }
-
-    .btn-next {
-        width: 100%;
-    }
-
-    .next-area {
-        display: block;
-    }
-
 }
-
 </style>
 </head>
-
 
 <body>
 
 <div class="container">
 
-    <!-- HEADER -->
 
-    <div class="header">
+<!-- ================= HALAMAN AWAL ================= -->
 
-        <div class="icon">🌊</div>
+<div class="card start-page" id="startPage">
 
-        <h1>Kuis Evaluasi</h1>
-
-        <p>Keseimbangan Asam Basa dalam Tubuh</p>
-
+    <div class="group-badge">
+        KELOMPOK 4 • KEPERAWATAN
     </div>
 
+    <div class="icon-box">
+        🧪
+    </div>
 
-    <!-- CARD -->
+    <h1>
+        Kuis <span>Keseimbangan</span><br>
+        Asam-Basa
+    </h1>
 
-    <div class="card">
+    <p class="description">
+        Uji pemahamanmu mengenai mekanisme dan faktor
+        yang memengaruhi keseimbangan asam-basa dalam tubuh.
+    </p>
 
+    <p class="love-text">
+        “Kalau cinta bisa bikin deg-degan, semoga kuis ini
+        cuma bikin kamu penasaran.” 💕
+    </p>
 
-        <!-- ================= START ================= -->
+    <div class="info-box">
 
-        <div class="start-page" id="startPage">
-
-            <h2>Selamat Datang! 👋</h2>
-
-            <p>
-                Yuk uji pemahamanmu mengenai
-                <b>keseimbangan asam basa</b>
-                dalam tubuh melalui 10 soal pilihan ganda.
-            </p>
-
-
-            <div class="info-box">
-
-                <div class="info">
-
-                    <div class="info-icon">📝</div>
-
-                    <strong>10 Soal</strong>
-
-                    <span>Pilihan Ganda</span>
-
-                </div>
-
-
-                <div class="info">
-
-                    <div class="info-icon">⏱️</div>
-
-                    <strong>Tanpa Batas</strong>
-
-                    <span>Waktu</span>
-
-                </div>
-
-
-                <div class="info">
-
-                    <div class="info-icon">🎯</div>
-
-                    <strong>Nilai Otomatis</strong>
-
-                    <span>Langsung</span>
-
-                </div>
-
-            </div>
-
-
-            <button class="btn-start" onclick="startQuiz()">
-                🚀 Mulai Kuis
-            </button>
-
+        <div class="info-title">
+            📋 Informasi Kuis
         </div>
 
-
-
-        <!-- ================= QUIZ ================= -->
-
-        <div class="quiz-page" id="quizPage">
-
-
-            <div class="quiz-top">
-
-                <div class="question-counter" id="questionCounter">
-                    Soal 1 dari 10
-                </div>
-
-                <div class="score-small">
-                    ⭐ <span id="currentScore">0</span>
-                </div>
-
-            </div>
-
-
-            <div class="progress-container">
-
-                <div class="progress" id="progress"></div>
-
-            </div>
-
-
-            <div class="question" id="question"></div>
-
-
-            <div class="options" id="options"></div>
-
-
-            <div class="explanation" id="explanation">
-
-                <div class="explanation-title">
-                    💡 Pembahasan
-                </div>
-
-                <div id="explanationText"></div>
-
-            </div>
-
-
-            <div class="next-area">
-
-                <button
-                    class="btn-next"
-                    id="nextButton"
-                    onclick="nextQuestion()"
-                    disabled>
-
-                    Jawaban Berikutnya →
-
-                </button>
-
-            </div>
-
+        <div class="info-item">
+            📝 <b>Jumlah Soal:</b> 10 soal
         </div>
 
+        <div class="info-item">
+            🎯 <b>Bentuk:</b> Pilihan Ganda
+        </div>
 
+        <div class="info-item">
+            🔀 <b>Jawaban:</b> Pilihan jawaban diacak
+        </div>
 
-        <!-- ================= RESULT ================= -->
-
-        <div class="result-page" id="resultPage">
-
-            <div class="result-icon" id="resultIcon">
-                🎉
-            </div>
-
-            <h2 id="resultTitle">
-                Kuis Selesai!
-            </h2>
-
-
-            <div class="score-circle">
-
-                <div class="score-number" id="finalScore">
-                    0
-                </div>
-
-                <div class="score-label">
-                    dari 10 soal
-                </div>
-
-            </div>
-
-
-            <p class="result-message" id="resultMessage"></p>
-
-
-            <button class="btn-restart" onclick="restartQuiz()">
-                🔄 Ulangi Kuis
-            </button>
-
+        <div class="info-item">
+            📚 <b>Materi:</b> Keseimbangan Asam-Basa
         </div>
 
     </div>
 
+    <button class="start-btn" onclick="startQuiz()">
+        🚀 Mulai Kuis
+    </button>
 
     <div class="footer">
-        © 2026 • Kuis Evaluasi Keseimbangan Asam Basa
+        Kuis Keseimbangan Asam-Basa • Kelompok 4
     </div>
 
 </div>
 
 
+<!-- ================= HALAMAN QUIZ ================= -->
+
+<div class="card quiz-page" id="quizPage">
+
+    <div class="progress-text" id="progressText">
+        Soal 1 dari 10
+    </div>
+
+    <div class="progress">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <div class="question" id="questionText"></div>
+
+    <div class="options" id="optionsContainer"></div>
+
+    <div class="explanation" id="explanation"></div>
+
+    <div class="quiz-buttons">
+
+        <button class="back-btn" onclick="previousQuestion()">
+            ← Kembali
+        </button>
+
+        <button class="next-btn" id="nextButton" onclick="nextQuestion()">
+            Jawaban Berikutnya →
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- ================= HASIL ================= -->
+
+<div class="card result-page" id="resultPage">
+
+    <div class="group-badge">
+        KELOMPOK 4 • KEPERAWATAN
+    </div>
+
+    <h1>🎯 Hasil Kuis</h1>
+
+    <p>
+        Berikut hasil yang kamu peroleh dari kuis ini.
+    </p>
+
+    <div class="score-circle">
+
+        <div class="score-number" id="scoreNumber">
+            0
+        </div>
+
+        <div class="score-label">
+            Nilai
+        </div>
+
+    </div>
+
+    <div class="result-summary">
+
+        <div class="summary-box">
+            <strong id="correctNumber">0</strong>
+            Benar
+        </div>
+
+        <div class="summary-box">
+            <strong id="wrongNumber">0</strong>
+            Salah
+        </div>
+
+    </div>
+
+    <p id="resultMessage"></p>
+
+    <br>
+
+    <button class="restart-btn" onclick="restartQuiz()">
+        🔄 Isi Kuis Lagi
+    </button>
+
+    <div class="footer">
+        Kuis Keseimbangan Asam-Basa • Kelompok 4
+    </div>
+
+</div>
+
+</div>
+
 
 <script>
 
-
 /* =====================================================
-   DATA SOAL
-===================================================== */
+   BANK SOAL — 10 SOAL
+   ===================================================== */
 
 const questions = [
 
 {
 question:
-"Faktor utama yang berperan dalam mempertahankan keseimbangan asam basa adalah...",
+"Faktor utama yang berperan dalam mempertahankan keseimbangan asam-basa adalah...",
 
-options: [
+options:[
 "Sistem buffer, pernapasan, dan ginjal",
 "Sistem saraf, kulit, dan tulang",
 "Jantung, lambung, dan usus",
 "Otot, kulit, dan hati"
 ],
 
-answer: 0,
+answer:0,
 
 explanation:
-"Ketiga sistem tersebut merupakan mekanisme utama tubuh dalam menjaga keseimbangan asam basa. Sistem buffer bekerja cepat, sedangkan paru-paru dan ginjal membantu mengatur komponen asam basa dalam tubuh."
+"Ketiga sistem tersebut merupakan mekanisme utama tubuh dalam menjaga keseimbangan asam-basa. Sistem buffer bekerja cepat, sedangkan paru-paru dan ginjal membantu mengatur komponen asam-basa dalam tubuh."
 },
-
 
 {
 question:
 "Sistem buffer berfungsi untuk...",
 
-options: [
+options:[
 "Meningkatkan produksi energi",
 "Mencegah perubahan pH yang terlalu drastis",
 "Mengatur suhu tubuh",
 "Menghasilkan oksigen"
 ],
 
-answer: 1,
+answer:1,
 
 explanation:
 "Sistem buffer membantu mempertahankan pH dengan mengikat atau melepaskan ion H⁺ sehingga perubahan pH tidak terjadi secara berlebihan."
 },
 
-
 {
 question:
-"Sistem pernapasan memengaruhi keseimbangan asam basa melalui pengaturan...",
+"Sistem pernapasan memengaruhi keseimbangan asam-basa melalui pengaturan...",
 
-options: [
+options:[
 "Glukosa",
 "Protein",
 "Karbon dioksida (CO₂)",
 "Kalsium"
 ],
 
-answer: 2,
+answer:2,
 
 explanation:
 "Sistem pernapasan mengatur kadar CO₂ dalam darah. CO₂ berhubungan dengan pembentukan asam karbonat sehingga dapat memengaruhi pH darah."
 },
 
-
 {
 question:
 "Peningkatan kadar CO₂ dalam darah dapat menyebabkan...",
 
-options: [
+options:[
 "pH darah meningkat",
 "pH darah menurun",
 "pH darah tidak berubah",
 "Darah menjadi lebih basa"
 ],
 
-answer: 1,
+answer:1,
 
 explanation:
 "Jika CO₂ meningkat, pembentukan asam karbonat juga meningkat. Akibatnya darah menjadi lebih asam sehingga pH menurun."
 },
 
-
 {
 question:
-"Ginjal membantu menjaga keseimbangan asam basa dengan cara...",
+"Ginjal membantu menjaga keseimbangan asam-basa dengan cara...",
 
-options: [
+options:[
 "Mengatur ion H⁺ dan bikarbonat",
 "Menghasilkan oksigen",
 "Mengatur denyut jantung",
 "Menghasilkan CO₂"
 ],
 
-answer: 0,
+answer:0,
 
 explanation:
-"Ginjal membantu mengeluarkan kelebihan ion H⁺ melalui urine dan mengatur kadar bikarbonat untuk mempertahankan keseimbangan asam basa."
+"Ginjal membantu mengeluarkan kelebihan ion H⁺ melalui urine dan mengatur kadar bikarbonat untuk mempertahankan keseimbangan asam-basa."
 },
-
 
 {
 question:
-"Aktivitas fisik yang berat dapat memengaruhi keseimbangan asam basa karena...",
+"Aktivitas fisik yang berat dapat memengaruhi keseimbangan asam-basa karena...",
 
-options: [
+options:[
 "Menurunkan metabolisme tubuh",
 "Meningkatkan produksi CO₂ dan asam laktat",
 "Menghentikan proses pernapasan",
 "Mengurangi kebutuhan energi"
 ],
 
-answer: 1,
+answer:1,
 
 explanation:
-"Aktivitas fisik berat meningkatkan metabolisme tubuh. Kondisi tersebut dapat meningkatkan produksi CO₂ dan asam laktat yang kemudian memengaruhi keseimbangan asam basa."
+"Aktivitas fisik berat meningkatkan metabolisme tubuh. Kondisi tersebut dapat meningkatkan produksi CO₂ dan asam laktat yang kemudian memengaruhi keseimbangan asam-basa."
 },
-
 
 {
 question:
-"Makanan dapat memengaruhi keseimbangan asam basa terutama melalui...",
+"Makanan dapat memengaruhi keseimbangan asam-basa terutama melalui...",
 
-options: [
+options:[
 "Proses metabolisme",
 "Warna makanan",
 "Bentuk makanan",
 "Suhu makanan"
 ],
 
-answer: 0,
+answer:0,
 
 explanation:
-"Makanan yang dikonsumsi akan mengalami metabolisme. Hasil metabolisme dapat menghasilkan zat yang bersifat asam atau basa sehingga memengaruhi keseimbangan asam basa."
+"Makanan yang dikonsumsi akan mengalami metabolisme. Hasil metabolisme dapat menghasilkan zat yang bersifat asam atau basa sehingga memengaruhi keseimbangan asam-basa."
 },
-
 
 {
 question:
-"Manakah yang termasuk faktor yang dapat memengaruhi keseimbangan asam basa?",
+"Manakah yang termasuk faktor yang dapat memengaruhi keseimbangan asam-basa?",
 
-options: [
+options:[
 "Sistem buffer, pernapasan, ginjal, aktivitas fisik, makanan dan metabolisme",
 "Tinggi badan, berat badan, warna kulit, dan rambut",
 "Suhu, cahaya, suara, dan kelembapan",
 "Usia, warna mata, tinggi badan, dan golongan darah"
 ],
 
-answer: 0,
+answer:0,
 
 explanation:
-"Sistem buffer, pernapasan, ginjal, aktivitas fisik, makanan dan metabolisme merupakan faktor yang dapat memengaruhi keseimbangan asam basa dalam tubuh."
+"Sistem buffer, pernapasan, ginjal, aktivitas fisik, makanan dan metabolisme merupakan faktor yang dapat memengaruhi keseimbangan asam-basa dalam tubuh."
 },
-
 
 {
 question:
 "Ketika seseorang melakukan aktivitas fisik berat, produksi asam laktat dapat meningkat akibat...",
 
-options: [
+options:[
 "Peningkatan aktivitas metabolisme",
 "Penurunan kebutuhan energi",
 "Berkurangnya kerja otot",
 "Berkurangnya penggunaan oksigen secara keseluruhan"
 ],
 
-answer: 0,
+answer:0,
 
 explanation:
 "Saat aktivitas fisik meningkat, kebutuhan energi otot juga meningkat sehingga metabolisme menjadi lebih aktif dan produksi asam laktat dapat bertambah."
 },
 
-
 {
 question:
 "Jika sistem buffer, paru-paru, dan ginjal bekerja dengan baik, maka tubuh akan lebih mampu...",
 
-options: [
+options:[
 "Mempertahankan pH dalam batas normal",
 "Meningkatkan suhu tubuh",
 "Mengurangi kebutuhan energi",
 "Menghentikan produksi CO₂"
 ],
 
-answer: 0,
+answer:0,
 
 explanation:
 "Kerja sama sistem buffer, paru-paru, dan ginjal membantu tubuh mempertahankan pH darah dalam kisaran normal sehingga fungsi tubuh dapat berjalan dengan baik."
@@ -858,241 +739,343 @@ explanation:
 
 /* =====================================================
    VARIABEL
-===================================================== */
+   ===================================================== */
 
 let currentQuestion = 0;
 
-let score = 0;
+let quizQuestions = [];
 
-let answered = false;
+let userAnswers = [];
 
 
 /* =====================================================
-   ELEMENT
-===================================================== */
+   FUNGSI ACAK
+   ===================================================== */
 
-const startPage =
-document.getElementById("startPage");
+function shuffle(array){
 
-const quizPage =
-document.getElementById("quizPage");
+    let arr = [...array];
 
-const resultPage =
-document.getElementById("resultPage");
+    for(let i = arr.length - 1; i > 0; i--){
 
-const questionElement =
-document.getElementById("question");
+        const j =
+            Math.floor(Math.random() * (i + 1));
 
-const optionsElement =
-document.getElementById("options");
+        [arr[i], arr[j]] =
+            [arr[j], arr[i]];
+    }
 
-const questionCounter =
-document.getElementById("questionCounter");
+    return arr;
+}
 
-const currentScore =
-document.getElementById("currentScore");
 
-const progress =
-document.getElementById("progress");
+/* =====================================================
+   SIAPKAN KUIS
+   ===================================================== */
 
-const explanation =
-document.getElementById("explanation");
+function prepareQuiz(){
 
-const explanationText =
-document.getElementById("explanationText");
+    quizQuestions =
+        shuffle(questions).map(q => {
 
-const nextButton =
-document.getElementById("nextButton");
+            const answers =
+                q.options.map((text,index) => ({
+
+                    text:text,
+
+                    correct:index === q.answer
+
+                }));
+
+            return {
+
+                question:q.question,
+
+                options:shuffle(answers),
+
+                explanation:q.explanation
+
+            };
+
+        });
+}
 
 
 /* =====================================================
    MULAI KUIS
-===================================================== */
+   ===================================================== */
 
-function startQuiz() {
-
-    startPage.style.display = "none";
-
-    quizPage.style.display = "block";
+function startQuiz(){
 
     currentQuestion = 0;
 
-    score = 0;
+    userAnswers = [];
+
+    prepareQuiz();
+
+    document.getElementById("startPage")
+        .style.display = "none";
+
+    document.getElementById("resultPage")
+        .style.display = "none";
+
+    document.getElementById("quizPage")
+        .style.display = "block";
 
     loadQuestion();
 
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
 }
 
 
 /* =====================================================
    LOAD SOAL
-===================================================== */
+   ===================================================== */
 
-function loadQuestion() {
+function loadQuestion(){
 
-    answered = false;
+    const q =
+        quizQuestions[currentQuestion];
 
-    const q = questions[currentQuestion];
+    document.getElementById("progressText")
+        .textContent =
+        `Soal ${currentQuestion + 1} dari 10`;
 
-    questionCounter.textContent =
-        `Soal ${currentQuestion + 1} dari ${questions.length}`;
+    document.getElementById("progressBar")
+        .style.width =
+        `${((currentQuestion + 1) / 10) * 100}%`;
 
-    currentScore.textContent = score;
+    document.getElementById("questionText")
+        .textContent =
+        q.question;
 
-    questionElement.textContent = q.question;
+    const container =
+        document.getElementById("optionsContainer");
 
-    optionsElement.innerHTML = "";
+    container.innerHTML = "";
+
+    const letters = ["A","B","C","D"];
+
+    q.options.forEach((option,index)=>{
+
+        const button =
+            document.createElement("button");
+
+        button.className = "option";
+
+        button.innerHTML =
+            `<b>${letters[index]}.</b> ${option.text}`;
+
+        button.onclick =
+            () => selectAnswer(index);
+
+        container.appendChild(button);
+
+    });
+
+
+    const explanation =
+        document.getElementById("explanation");
 
     explanation.style.display = "none";
 
-    nextButton.disabled = true;
+    explanation.innerHTML = "";
 
 
-    /* progress */
+    /*
+       Menampilkan jawaban yang sebelumnya
+       sudah dipilih ketika kembali.
+    */
 
-    const percentage =
-        ((currentQuestion + 1) / questions.length) * 100;
+    if(userAnswers[currentQuestion] !== undefined){
 
-    progress.style.width =
-        percentage + "%";
+        showPreviousAnswer();
+
+    }
 
 
-    if (currentQuestion === questions.length - 1) {
+    const nextButton =
+        document.getElementById("nextButton");
+
+    if(currentQuestion === 9){
 
         nextButton.textContent =
             "Lihat Hasil 🎯";
 
-    } else {
+    }else{
 
         nextButton.textContent =
             "Jawaban Berikutnya →";
 
     }
 
-
-    /* options */
-
-    const letters =
-        ["A", "B", "C", "D"];
-
-
-    q.options.forEach((option, index) => {
-
-        const div =
-            document.createElement("div");
-
-        div.className = "option";
-
-        div.innerHTML = `
-            <div class="option-letter">
-                ${letters[index]}
-            </div>
-
-            <div class="option-text">
-                ${option}
-            </div>
-        `;
-
-        div.onclick =
-            () => selectAnswer(index, div);
-
-        optionsElement.appendChild(div);
-
-    });
-
 }
 
 
 /* =====================================================
    PILIH JAWABAN
-===================================================== */
+   ===================================================== */
 
-function selectAnswer(selectedIndex, selectedElement) {
+function selectAnswer(selectedIndex){
 
-    if (answered) return;
+    if(userAnswers[currentQuestion] !== undefined){
+        return;
+    }
 
-    answered = true;
+    const q =
+        quizQuestions[currentQuestion];
 
-
-    const correctIndex =
-        questions[currentQuestion].answer;
-
-
-    const allOptions =
+    const buttons =
         document.querySelectorAll(".option");
 
+    const isCorrect =
+        q.options[selectedIndex].correct;
 
-    allOptions.forEach(option => {
 
-        option.classList.add("disabled");
+    userAnswers[currentQuestion] = {
+
+        selectedIndex:selectedIndex,
+
+        correct:isCorrect
+
+    };
+
+
+    buttons.forEach((button,index)=>{
+
+        button.disabled = true;
+
+        if(q.options[index].correct){
+
+            button.classList.add("correct");
+
+        }
+
+        if(
+            index === selectedIndex &&
+            !isCorrect
+        ){
+
+            button.classList.add("wrong");
+
+        }
 
     });
 
 
-    /* BENAR */
+    const explanation =
+        document.getElementById("explanation");
 
-    if (selectedIndex === correctIndex) {
-
-        selectedElement.classList.add("correct");
-
-        score++;
-
-        currentScore.textContent = score;
-
-    }
-
-
-    /* SALAH */
-
-    else {
-
-        selectedElement.classList.add("wrong");
-
-        allOptions[correctIndex]
-            .classList.add("correct");
-
-    }
-
-
-    /* PEMBAHASAN */
-
-    explanationText.textContent =
-        questions[currentQuestion].explanation;
+    explanation.innerHTML =
+        `<b>Penjelasan:</b><br>${q.explanation}`;
 
     explanation.style.display =
         "block";
+}
 
 
-    nextButton.disabled =
-        false;
+/* =====================================================
+   TAMPILKAN JAWABAN SEBELUMNYA
+   ===================================================== */
+
+function showPreviousAnswer(){
+
+    const q =
+        quizQuestions[currentQuestion];
+
+    const answer =
+        userAnswers[currentQuestion];
+
+    const buttons =
+        document.querySelectorAll(".option");
+
+
+    buttons.forEach((button,index)=>{
+
+        button.disabled = true;
+
+        if(q.options[index].correct){
+
+            button.classList.add("correct");
+
+        }
+
+        if(
+            index === answer.selectedIndex &&
+            !answer.correct
+        ){
+
+            button.classList.add("wrong");
+
+        }
+
+    });
+
+
+    const explanation =
+        document.getElementById("explanation");
+
+    explanation.innerHTML =
+        `<b>Penjelasan:</b><br>${q.explanation}`;
+
+    explanation.style.display =
+        "block";
+}
+
+
+/* =====================================================
+   TOMBOL KEMBALI
+   ===================================================== */
+
+function previousQuestion(){
+
+    if(currentQuestion > 0){
+
+        currentQuestion--;
+
+        loadQuestion();
+
+        window.scrollTo({
+            top:0,
+            behavior:"smooth"
+        });
+
+    }
 
 }
 
 
 /* =====================================================
    SOAL BERIKUTNYA
-===================================================== */
+   ===================================================== */
 
-function nextQuestion() {
+function nextQuestion(){
 
-    if (!answered) return;
+    if(userAnswers[currentQuestion] === undefined){
+
+        alert(
+            "Silakan pilih salah satu jawaban terlebih dahulu."
+        );
+
+        return;
+    }
 
 
-    currentQuestion++;
+    if(currentQuestion < 9){
 
-
-    if (currentQuestion < questions.length) {
+        currentQuestion++;
 
         loadQuestion();
 
         window.scrollTo({
-            top: 0,
-            behavior: "smooth"
+            top:0,
+            behavior:"smooth"
         });
 
-    }
-
-    else {
+    }else{
 
         showResult();
 
@@ -1103,112 +1086,102 @@ function nextQuestion() {
 
 /* =====================================================
    HASIL
-===================================================== */
+   ===================================================== */
 
-function showResult() {
+function showResult(){
 
-    quizPage.style.display =
-        "none";
+    document.getElementById("quizPage")
+        .style.display = "none";
 
-    resultPage.style.display =
-        "block";
+    document.getElementById("resultPage")
+        .style.display = "block";
 
 
-    document.getElementById("finalScore")
+    let score = 0;
+
+    userAnswers.forEach(answer => {
+
+        if(answer.correct){
+            score++;
+        }
+
+    });
+
+
+    const total = 10;
+
+    const wrong = total - score;
+
+    const finalScore =
+        Math.round((score / total) * 100);
+
+
+    document.getElementById("scoreNumber")
+        .textContent = finalScore;
+
+    document.getElementById("correctNumber")
         .textContent = score;
 
-
-    const percentage =
-        (score / questions.length) * 100;
-
-
-    const resultTitle =
-        document.getElementById("resultTitle");
-
-    const resultMessage =
-        document.getElementById("resultMessage");
-
-    const resultIcon =
-        document.getElementById("resultIcon");
+    document.getElementById("wrongNumber")
+        .textContent = wrong;
 
 
-    if (percentage === 100) {
+    let message = "";
 
-        resultIcon.textContent = "🏆";
 
-        resultTitle.textContent =
-            "Sempurna!";
+    if(finalScore === 100){
 
-        resultMessage.textContent =
-            "Luar biasa! Semua jawaban kamu benar. Kamu sangat memahami materi keseimbangan asam basa.";
+        message =
+            "Luar biasa! 🎉 Pemahamanmu mengenai keseimbangan asam-basa sangat baik.";
 
-    }
+    }else if(finalScore >= 80){
 
-    else if (percentage >= 80) {
+        message =
+            "Sangat baik! ✨ Pemahamanmu sudah sangat bagus.";
 
-        resultIcon.textContent = "🌟";
+    }else if(finalScore >= 60){
 
-        resultTitle.textContent =
-            "Sangat Baik!";
+        message =
+            "Cukup baik! 💪 Beberapa konsep masih perlu dipelajari kembali.";
 
-        resultMessage.textContent =
-            "Hasil yang sangat bagus! Pemahaman kamu mengenai keseimbangan asam basa sudah sangat baik.";
+    }else{
+
+        message =
+            "Tetap semangat! 📚 Pelajari kembali materi dan coba lagi.";
 
     }
 
-    else if (percentage >= 60) {
 
-        resultIcon.textContent = "👍";
+    document.getElementById("resultMessage")
+        .textContent = message;
 
-        resultTitle.textContent =
-            "Cukup Baik!";
 
-        resultMessage.textContent =
-            "Pemahaman kamu sudah cukup baik. Pelajari kembali beberapa materi agar hasilnya semakin bagus.";
-
-    }
-
-    else {
-
-        resultIcon.textContent = "📚";
-
-        resultTitle.textContent =
-            "Tetap Semangat!";
-
-        resultMessage.textContent =
-            "Jangan menyerah! Pelajari kembali materi dan pembahasan, kemudian coba kuis sekali lagi.";
-
-    }
-
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
 }
 
 
 /* =====================================================
-   ULANGI
-===================================================== */
+   ISI KUIS LAGI
+   ===================================================== */
 
-function restartQuiz() {
+function restartQuiz(){
 
-    currentQuestion = 0;
+    document.getElementById("resultPage")
+        .style.display = "none";
 
-    score = 0;
+    document.getElementById("quizPage")
+        .style.display = "none";
 
-    answered = false;
-
-
-    resultPage.style.display =
-        "none";
-
-    quizPage.style.display =
-        "block";
-
-
-    loadQuestion();
+    document.getElementById("startPage")
+        .style.display = "block";
 
 
     window.scrollTo({
-        top: 0,
-        behavior: "smooth"
+        top:0,
+        behavior:"smooth"
     });
 
 }
@@ -1217,4 +1190,3 @@ function restartQuiz() {
 
 </body>
 </html>
- 
